@@ -1,20 +1,28 @@
-import pickle #to open saved files
+import pickle
+from pyexpat.errors import XML_ERROR_NOT_STANDALONE # to open saved files
 import time
 from keras.models import Sequential
-#help in creating the convulted images, maxpooling and flatten and hidden layers
-#done in backend
+# help in creating the convoluted images, maxpooling and flatten and hidden layers
+# done in backend
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 from keras.callbacks import TensorBoard
 import tensorboard
+import numpy as np
+from sklearn.model_selection import train_test_split
+from PIL import Image
+import matplotlib.pyplot as plt
 
 # TRAINING MODEL
-X = pickle.load(open('X.pkl', 'rb')) #contains images (array format)
-Y = pickle.load(open('Y.pkl', 'rb')) #contains label (0 or 1 for dog or cat)
+X = pickle.load(open('X.pkl', 'rb')) # contains images (array format)
+Y = pickle.load(open('Y.pkl', 'rb')) # contains label (0 = hair, 1 = no_hair)
 
-X = X/225 #converting all values to smaller numbers to increase performance
+X = X/225 # converting all values to smaller numbers to increase performance
 print(X.shape) # (tot images, height, width, 3 colors rgb)
 
-# STEP 1: Convulted Image
+# splits data set into training and validation data sets --> 90% training, 10% testing
+x_train, x_valid, y_train, y_valid = train_test_split(X, Y, test_size=0.1, random_state=42)
+
+# STEP 1: Convoluted Image
 # Input image * feature detector(filter) == (0 or 1) feature map(convoluted image) ==> CONVOLUTION
 # section of matrix completes a value * value of a feature detector to get 
 #   either 0 or 1. This will determine what the value is on the feature map
@@ -38,7 +46,6 @@ model.add(MaxPooling2D((2,2)))
 
 #Flatten
 model.add(Flatten())
-
 
 model.add(Dense(128, input_shape = X.shape[1:], activation='relu'))
 
@@ -68,10 +75,24 @@ Results end of part 2: Prior to optimization
 # OPTIMIZATION
 # tensorboard --> used for visualization for models especially when having several models
 
-NAME = f'cat-dog-prediction-{int(time.time())}'
+NAME = f'hair-no-hair-prediction-{int(time.time())}'
 
 # logs will be correctly formatted
 tensorboard = TensorBoard(log_dir=f'logs\\{NAME}\\') # logs folder will hold logs of models 
 
 # will save logs in folder logs
-model.fit(X, Y, epochs=5, validation_split=0.1, batch_size=32, callbacks=tensorboard)
+# using 5 epochs due to long processing time; number of epochs can be increased for better accuracy
+model.fit(x_train, y_train, epochs=5, validation_data=(x_valid, y_valid), batch_size=32, callbacks=tensorboard)
+
+# print output from validation data set
+for i in range(len(x_valid)):
+    img = Image.fromarray(np.uint8(x_valid[i] * 225)).convert('RGB')
+    plt.imshow(img)
+    plt.show()
+    if y_valid[i] == 0:
+        print("Model predicts hair")
+    else:
+        print("Model predicts no_hair")
+
+# save and export model
+model.save(r'CHC_model')
