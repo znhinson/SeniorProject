@@ -17,7 +17,6 @@ from keras.callbacks import ModelCheckpoint, TerminateOnNaN, TensorBoard, Reduce
 # from imutils import paths
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-import numpy as py
 import argparse
 import random
 import pickle
@@ -70,6 +69,7 @@ def build(width, height, depth):
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Dropout(0.25))
 
+    """
     # (CONV -> RELU) * 3 -> POOL layer set
     model.add(Conv2D(128, (3, 3), padding = "same"))
     model.add(Activation("relu"))
@@ -82,6 +82,7 @@ def build(width, height, depth):
     model.add(BatchNormalization(axis = chanDim))
     model.add(MaxPooling2D(pool_size = (2, 2)))
     model.add(Dropout(0.25))
+    """
 
     # FC -> RELU layer set
     model.add(Flatten())
@@ -119,14 +120,13 @@ def train_model():
 
     for category in CATEGORIES:
         folder = os.path.join(DIRECTORY, category)
-        label = CATEGORIES.index(category)
 
         for img in os.listdir(folder):
             img_path = os.path.join(folder, img)
             img_arr = cv2.imread(img_path)
             img_arr = cv2.resize(img_arr, (224, 224))
-            label_arr = ENCODINGS.get(category)
-            data.append([img_arr, label_arr])
+            encoding = ENCODINGS.get(category)
+            data.append([img_arr, encoding])
 
     random.shuffle(data)
 
@@ -140,38 +140,17 @@ def train_model():
     X = np.array(X)
     Y = np.array(Y)
 
-    x_train_and_val, x_test, y_train_and_val, y_test = train_test_split(X, Y, test_size = 0.1, random_state = 42)
-    x_train, x_valid, y_train, y_valid = train_test_split(x_train_and_val, y_train_and_val, test_size = 0.1, random_state = 42)
+    x_remainder, x_test, y_remainder, y_test = train_test_split(X, Y, test_size = 0.1, random_state = 42)
+    x_train, x_valid, y_train, y_valid = train_test_split(x_remainder, y_remainder, test_size = 0.1, random_state = 42)
 
     x_train = x_train / 255.0
     x_valid = x_valid / 255.0
-    x_test = x_test / 255.0
+    x_test = x_test / 255.0     
 
     model = build(224, 224, 3)
     model.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
     model.summary()
     model.fit(x_train, y_train, epochs = 12, batch_size = 21, validation_data = (x_valid, y_valid))
-
-"""
-def process_image(img_path):
-    # load input image and resize it
-    img = cv2.imread(img_path)
-    img = cv2.resize(img, 224, 224)
-
-    # image to array
-    img_arr = img_to_array(img)
-
-    # normalize image
-    processed_img = np.array(img_arr, dtype = "float") / 255.0
-    return processed_img
-
-def make_prediction(img_path):
-    # process image
-    img = process_image(img_path)
-
-    # read image for output
-    output = cv2.imread(img_path)
-"""
 
 train_model()
 
@@ -200,4 +179,25 @@ Epoch 11/12
 40/40 [==============================] - 89s 2s/step - loss: 0.3629 - accuracy: 0.8970 - val_loss: 4.3052 - val_accuracy: 0.2174
 Epoch 12/12
 40/40 [==============================] - 85s 2s/step - loss: 0.2139 - accuracy: 0.9430 - val_loss: 3.4867 - val_accuracy: 0.2500
+"""
+
+"""
+def process_image(img_path):
+    # load input image and resize it
+    img = cv2.imread(img_path)
+    img = cv2.resize(img, 224, 224)
+
+    # image to array
+    img_arr = img_to_array(img)
+
+    # normalize image
+    processed_img = np.array(img_arr, dtype = "float") / 255.0
+    return processed_img
+
+def make_prediction(img_path):
+    # process image
+    img = process_image(img_path)
+
+    # read image for output
+    output = cv2.imread(img_path)
 """
