@@ -1,13 +1,12 @@
 # CHC Model
-> This CHC Model  is a system that performs hair classification on images via deep learning and a convolutional neural network (in the form of a modified VGG model).
+> This CHC model is a system that performs hair classification on images via deep learning and a convolutional neural network (in the form of a modified VGG model).
 
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
-* [Setup](#setup)
+* [Developer Setup](#developer-setup)
+* [User Manual](#user-manual)
 * [Room for Improvement](#room-for-improvement)
-
-
 
 ## General Information
 The CHC model is a system that performs multi-class classification on images via deep learning and
@@ -17,34 +16,28 @@ classification to identify if an image showcases no hair or one of the ten hair 
 an image of their hair to the interact. The user image will be analyzed by the trained CHC model to produce
 a hair type prediction. The prediction will then be visualized to the user via the user interface.
 
-
 ## Technologies Used
 - Python
 - Google Colab
 - Visual Studio Code (VS Code)
 
-
-
-## Setup
-1. Download the [Jupyter Notebook]() file 
-
-2. Upload notebook to an IDE that works with Jupyter Notebook and Gradio (suggestions: VS Code or Google Colab)
-
+## Developer Setup
+1. Download the [Jupyter Notebook]() file.
+2. Upload notebook to an IDE that works with Jupyter Notebook and Gradio (suggestions: VS Code or Google Colab).
 3. To install all of the required software dependencies, run the following scripts in IDE:
 
       **pip install keras**
-
       **pip install tensorflow**
-
       **pip install gradio**
 
-4. Download [Hair Dataset]() to local drive
+4. Download [Hair Dataset]() to local drive.
+5. In the pre-processing code block, change the DIRECTORY to reflect where the hair dataset is located on local drive.
+6. Run each block of code to implement the CHC model.
 
-5. In the pre-processing code block, change the DIRECTORY to reflect where the hair dataset is located on local drive
-
-6. Run each block of code to implement the CHC Model
-
-
+## User Manual
+1. Follow the steps listed in the [Developer Setup](#developer-setup) section.
+2. The Gradio interface will display when the code finishes. Upload a JPG/JPEG or PNG image of hair to the interface.
+3. Once the CHC model has made a prediction, the result will be displayed on the interface.
 
 ## Room for Improvement
 These are areas in which the CHC model could improve.
