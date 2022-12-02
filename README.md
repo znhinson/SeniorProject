@@ -44,27 +44,17 @@ Run the following in terminal:
 ### Downloading Files
 1. Click **Code**
 2. Click **Download ZIP**
-3. Click **Extract all** for the **SeniorProject-main.zip** file
-4. Save to file path of choice
+3. Click **Extract all** for the **SeniorProject-main.zip** folder
 
 ## Getting Started
 
-### How to find dataset
-1. Open file directory
-2. Click the **SeniorProject-main** file (x2)
-3. Click new_dataset
-4. This will be the file path used in the **Jupyter Notebook section, step 7**
-
-### Jupyter Notebook
-1. Launch VS Code
-2. Click **Open File**
-3. Click the **SeniorProject-main** file (x2)
-4. Click the **v2_base** folder
-5. Open the **vgg_model.ipynb** file
-6. Navigate to the **preprocessing** code block
-7. Change **DIRECTORY** to reflect the file location of the dataset
-![Directory](https://github.com/znhinson/SeniorProject/blob/main/images/preprocess.PNG)
-
+### Setting up environment in VS Code
+1. Launch VS Code 
+2. Click New Folder
+3. Select **SeniorProject-main** folder
+4. Navigate to *Explorer*
+5. Select **v2_base** folder
+6. Click **vgg_model.ipynb** file 
 
 
 After the completion of these steps, run each block of code to implement the CHC Model
