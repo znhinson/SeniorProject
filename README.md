@@ -57,7 +57,7 @@ Run the following in terminal:
 6. Click **vgg_model.ipynb** file 
 
 
-After the completion of these steps, run each block of code to implement the CHC Model
+After the completion of these steps, run each block of code to implement the CHC model
 
 
 ## User Tutorial
@@ -71,11 +71,11 @@ After the completion of these steps, run each block of code to implement the CHC
 1. Click **Clear**
 
 ## Room for Improvement
-These are areas in which the CHC Model could improve.
+These are areas in which the CHC model could improve.
 
-- Address the overfitting issue of the CHC Model
+- Address the overfitting issue of the CHC model
 - Increase hair dataset
-- Imporvements to the CHC Model testing and user testing accuracy
+- Improvements to the CHC model testing and user testing accuracy
 
 
 
