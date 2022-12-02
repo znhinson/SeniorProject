@@ -1,5 +1,5 @@
 # CHC Model
-> This CHC Model  is a system that performs hair classification on images via deep learning and a convolutional neural network (VGG Model).
+> The CHC model is a system that performs hair classification on images via deep learning and a convolutional neural network (VGG model).
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -11,11 +11,11 @@
 
 ## General Information
 The CHC model is a system that performs multi-class classification on images via deep learning and
-a convolutional neural network (VGG Model). The CHC Model uses multi-class classification to identify if an
-image has no hair or one of the ten hair types (i.e., 1, 2A, 2B, 2C, 3A, 3B, 3C, 4A, 4B, 4C). A user interface
-was developed to allow users to upload an image of their hair. The user image will be tested against the trained 
-CHC Model, producing a hair type prediction. The results of the trained CHC Model is visualized to the user via 
-user interface.
+a convolutional neural network (in the form of a VGG model). The CHC Mmodel uses multi-class classification
+to identify if an image has no hair or one of the ten hair types (i.e., 1, 2A, 2B, 2C, 3A, 3B, 3C, 4A, 4B, 4C).
+A user interface has been developed to allow users to upload an image of their hair. The user image
+will be tested against the trained CHC model, producing a hair type prediction. The result from the trained
+CHC model is visualized to the user via the user interface.
 
 
 ## Required Software Dependencies
@@ -63,17 +63,16 @@ After the completion of these steps, run each block of code to implement the CHC
 ## User Tutorial
 
 ### How to Upload an Image
-1. Upload hair image to the left window
+1. Upload hair image (JPG/JPEG or PNG) to the left window
 2. Click **Submit**
 3. View hair type prediction results in the right window
 
 ### How to clear submission
-1.Click **Clear**
+1. Click **Clear**
 
 ## Room for Improvement
 These are areas in which the CHC Model could improve.
 
-Room for improvement:
 - Address the overfitting issue of the CHC Model
 - Increase hair dataset
 
