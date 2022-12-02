@@ -27,7 +27,7 @@ user interface.
 
 ## Setup
 
-###Installations
+### Installations
 Run the following in terminal:
  pip install keras
  pip install tensorflow
