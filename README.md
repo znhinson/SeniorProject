@@ -77,7 +77,7 @@ After the completion of these steps, run each block of code to implement the CHC
 2. Click **Submit**
 3. View hair type prediction results in the right window
 
-###How to clear submission
+### How to clear submission
 1.Click **Clear**
 
 ## Room for Improvement
