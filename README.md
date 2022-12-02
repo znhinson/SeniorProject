@@ -51,10 +51,10 @@ Run the following in terminal:
 ### Setting up environment in VS Code
 1. Launch VS Code 
 2. Click New Folder or Open
-![launch](https://github.com/znhinson/SeniorProject/blob/main/images/launch_vs_code.PNG)
+![launch](https://github.com/znhinson/SeniorProject/blob/main/images/launch_vs_code.png)
 4. Select **SeniorProject-main** folder
 5. Navigate to *Explorer* in VS Code
-![Explorer](https://github.com/znhinson/SeniorProject/blob/main/images/explorer.PNG)
+![Explorer](https://github.com/znhinson/SeniorProject/blob/main/images/explorer.png)
 7. Select **v2_base** folder
 8. Click **vgg_model.ipynb** file 
 
