@@ -70,6 +70,16 @@ Run the following in terminal:
 After the completion of these steps, run each block of code to implement the CHC Model
 
 
+## User Tutorial
+
+### How to Upload an Image
+1. Upload hair image to the left window
+2. Click **Submit**
+3. View hair type prediction results in the right window
+
+###How to clear submission
+1.Click **Clear**
+
 ## Room for Improvement
 These are areas in which the CHC Model could improve.
 
