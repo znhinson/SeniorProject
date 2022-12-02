@@ -51,12 +51,12 @@ Run the following in terminal:
 ### Setting up environment in VS Code
 1. Launch VS Code 
 2. Click New Folder or Open
-![Folder](https://github.com/znhinson/SeniorProject/blob/main/images/explorer.PNG)
+![launch](https://github.com/znhinson/SeniorProject/blob/main/images/launch_vs_code.PNG)
 4. Select **SeniorProject-main** folder
-5. Navigate to *Explorer* 
-![Explorer](https://github.com/znhinson/SeniorProject/blob/main/images/launch_vs_code.PNG)
-6. Select **v2_base** folder
-7. Click **vgg_model.ipynb** file 
+5. Navigate to *Explorer* in VS Code
+![Explorer](https://github.com/znhinson/SeniorProject/blob/main/images/explorer.PNG)
+7. Select **v2_base** folder
+8. Click **vgg_model.ipynb** file 
 
 
 After the completion of these steps, run each block of code to implement the CHC Model
@@ -77,6 +77,8 @@ These are areas in which the CHC Model could improve.
 
 - Address the overfitting issue of the CHC Model
 - Increase hair dataset
+- Imporvements to the CHC Model testing and user testing accuracy
+
 
 
 
