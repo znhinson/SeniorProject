@@ -29,9 +29,15 @@ user interface.
 
 ### Installations
 Run the following in terminal:
-![Keras](images/install_1.png)
-![Tensorflow](images/install_2.png)
-![Gradio](images/install_3.png)
+
+
+![Keras](https://github.com/znhinson/SeniorProject/blob/main/images/install_1.PNG)
+
+
+![Tensorflow](https://github.com/znhinson/SeniorProject/blob/main/images/install_2.PNG)
+
+
+![Gradio](https://github.com/znhinson/SeniorProject/blob/main/images/install_3.PNG)
 
  
 
