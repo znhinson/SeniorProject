@@ -29,9 +29,10 @@ user interface.
 
 ### Installations
 Run the following in terminal:
- pip install keras
- pip install tensorflow
- pip install 
+![Keras]([http://url/to/img.png](https://github.com/znhinson/SeniorProject/blob/c63ac3e754609e57a2e73ed0c778702c15b20aa5/install_1.PNG))
+![Tensorflow]([http://url/to/img.png](https://github.com/znhinson/SeniorProject/blob/c63ac3e754609e57a2e73ed0c778702c15b20aa5/install_2.PNG))
+![Gradio]([http://url/to/img.png](https://github.com/znhinson/SeniorProject/blob/c63ac3e754609e57a2e73ed0c778702c15b20aa5/install_3.PNG))
+
  
 
 ### Saving Jupyter Notebook
