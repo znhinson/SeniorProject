@@ -50,11 +50,13 @@ Run the following in terminal:
 
 ### Setting up environment in VS Code
 1. Launch VS Code 
-2. Click New Folder
-3. Select **SeniorProject-main** folder
-4. Navigate to *Explorer*
-5. Select **v2_base** folder
-6. Click **vgg_model.ipynb** file 
+2. Click New Folder or Open
+![Folder](https://github.com/znhinson/SeniorProject/blob/main/images/explorer.PNG)
+4. Select **SeniorProject-main** folder
+5. Navigate to *Explorer* 
+![Explorer](https://github.com/znhinson/SeniorProject/blob/main/images/launch_vs_code.PNG)
+6. Select **v2_base** folder
+7. Click **vgg_model.ipynb** file 
 
 
 After the completion of these steps, run each block of code to implement the CHC Model
